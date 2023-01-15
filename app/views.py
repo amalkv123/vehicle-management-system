@@ -43,7 +43,7 @@ def registration(request):
                                     desigination_id=desiginations)
                 user.save()
                 messages.success(request, 'Registration successfully completed')
-                return redirect('signup')
+                return redirect('login_page')
         else:
             messages.error(request, 'password not matching')
             return redirect('registration')
