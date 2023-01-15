@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container" >
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 mt-5" >
+            <h1>WELCOME TO VEHICLE MANAGEMENT</h1>
+            <img src="https://img.freepik.com/free-vector/front-car-concept-illustration_114360-7978.jpg?w=826&t=st=1673772516~exp=1673773116~hmac=cea4002a18a2b4349f55e8ec6ed08e0532bcdf3c90bf9b8169348669e53b9314"
+                  class="img-fluid" alt="Sample image">
+            <a href="{% url 'login_page' %}" class="btn btn-primary w-100 mt-3" >Login</a>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+
+{% endblock %}

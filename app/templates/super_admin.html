@@ -1,0 +1,58 @@
+{% extends 'base2.html' %}
+{% block body %}
+
+<div class="row">
+    <div class="col sm-3"></div>
+    <div class="col sm-6">
+        {% for message in messages  %}
+    
+        {% if message.tags == 'error' %}
+        <div class="alert alert-danger text-center">
+            {{message}}
+        </div>
+
+        {% endif %}
+ {% endfor %}
+
+    </div>
+    <div class="col sm-3"></div>
+
+</div>
+
+
+
+<table  class="table text-center ">
+    <h1 class="text-center ">Vehicle Management</h1>
+    <tr>
+        <th>sl.no</th>
+        <th>Vehicle Number</th>
+        <th>Vehicle Type</th>
+        <th>Vehicle Model</th>
+        <th>Vehicle Description</th>
+        <th>Action</th>
+        
+        
+       
+       
+        <!-- <th>Action</th> -->
+    </tr>
+    {% for p in std %}
+   <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{p.vehicle_number}}</td>
+        <td>{{p.vehicle_type}}</td>
+        <td>{{p.vehicle_model}}</td>
+        <td>{{p.vehicle_description}}</td>
+        <td><a href="{% url 'update_vehicle' p.id %}" class="btn btn-warning ">Edit</a>
+         <a href="{% url 'delete_vehicle' p.id %}"class="btn btn-danger" >Delete</a></td>
+
+        
+    </tr>
+    {% endfor %}
+    
+</table>
+
+
+
+
+{% endblock %}
